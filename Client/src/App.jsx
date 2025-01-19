@@ -10,6 +10,7 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import About from "./pages/About"
 
+
 function App() {
 
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/about-us" element={<About/>}/>
+    
     </Routes>
     <LowerPadding/>
     </BrowserRouter>

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BiUser } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 
 function Profile() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className='px-1 space-y-4'>
       {/* Profile Section */}
