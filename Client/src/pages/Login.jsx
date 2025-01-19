@@ -1,50 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiKey, BiUser } from 'react-icons/bi';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { clearMessages, loginUser, setErrorMessage } from '../feature/auth/authSlice';
 
 function Login() {
-  const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate()
+  const {errorMessage, successMessage, isAuthenticated} = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
     if(email === '' || password === '') {
-      setErrorMessage('Please fill all the fields');
+      dispatch(setErrorMessage('Please fill all the fields'));
       setTimeout(() => {  
-        setErrorMessage('');
+        dispatch(clearMessages());
       }, 3000);
       return;
     }
-    const details = JSON.parse(localStorage.getItem("AuthDetails"))||[];
-    const user = details.find((detail) => detail.email === email);
-    if(user){
-      if(user.password === password)
-      {
-        setSuccessMessage("Login Successful");
-        setTimeout(() => {
-          navigate('/');
-          setSuccessMessage('');
-        }, 2000);
-      }
-      else
-      {
-        setErrorMessage('Invalid Password');
-        setTimeout(() => {
-          setErrorMessage('');
-        }, 3000); 
-      }
-    }
-    else
-    {
-      setErrorMessage('User not found');
-      setTimeout(() => {
-        setErrorMessage('');
-      }, 3000);
-    }
+    dispatch(loginUser({email, password}));
+    setTimeout(() => {
+      dispatch(clearMessages());
+    }, 3000);
   }
+  useEffect(() => {
+    if(isAuthenticated) {
+      navigate('/');
+    }
+  }, [isAuthenticated]);
   return (
     <div className='flex justify-center px-5'>
       <form className='space-y-6 w-full max-w-lg' onSubmit={handleSubmit}>
