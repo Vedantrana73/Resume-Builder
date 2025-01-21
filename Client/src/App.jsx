@@ -14,8 +14,9 @@ import ResumeForm from "./Resume/AddTemplate";
 import Resume2 from "./Resume/Resume2.jsx";
 import Resume4 from "./Resume/Resume4.jsx";
 import Resume6 from "./Resume/Resume6.jsx";
-import Resume3 from "./Resume/Resume3"
-import Resume7 from "./Resume/Resume7"
+import Resume3 from "./Resume/Resume3.jsx";
+import Resume7 from "./Resume/Resume7.jsx";
+import Resume5 from "./Resume/Resume5.jsx";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
 
 function Main() {
   const location = useLocation();
-  const noNavbarPaths = ['/resume1', '/resume2','/resume3','/resume6'];
+  const noNavbarPaths = ['/resume1', '/resume2','/resume3','/resume6','/resume7','/resume5'];
 
   return (
     <>
@@ -49,6 +50,7 @@ function Main() {
         <Route path="/resume2" element={<Resume2 />} />
         <Route path="/resume3" element={<Resume3/>}/>
         <Route path="/resume4" element={<Resume4/>}/>
+        <Route path="/resume5" element={<Resume5/>}/>
         <Route path="/resume6" element={<Resume6/>}/>
         <Route path="/resume7" element={<Resume7/>}/>
         <Route path="/template/add" element={<ResumeForm />} />
