@@ -14,6 +14,8 @@ import ResumeForm from "./Resume/AddTemplate";
 import Resume2 from "./Resume/Resume2.jsx";
 import Resume4 from "./Resume/Resume4.jsx";
 import Resume6 from "./Resume/Resume6.jsx";
+import Resume3 from "./Resume/Resume3"
+import Resume7 from "./Resume/Resume7"
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function Main() {
         <Route path="/resume2" element={<Resume2 />} />
         <Route path="/resume4" element={<Resume4/>}/>
         <Route path="/resume6" element={<Resume6/>}/>
+        <Route path="/resume-3" element={<Resume3 selectedTemplate={selectedTemplate}/>}/>
+        <Route path="/resume-7" element={<Resume7 selectedTemplate={selectedTemplate}/>}/>
         <Route path="/template/add" element={<ResumeForm />} />
       </Routes>
       {!noNavbarPaths.includes(location.pathname) && <LowerPadding />}
