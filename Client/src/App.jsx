@@ -10,8 +10,12 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import About from "./pages/About"
 import Resume1 from "./Resume/Resume1"
+import Resume2 from "./Resume/Resume2"
+
 import ResumeForm from "./Resume/AddTemplate"
 import { useEffect, useState } from "react"
+import Resume3 from "./Resume/Resume3"
+import Resume7 from "./Resume/Resume7"
 
 function App() {
 
@@ -36,7 +40,10 @@ function App() {
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/about-us" element={<About/>}/>
-      <Route path="/resume" element={<Resume1 selectedTemplate={selectedTemplate}/>}/>
+      <Route path="/resume-1" element={<Resume1 selectedTemplate={selectedTemplate}/>}/>
+      <Route path="/resume-2" element={<Resume2 selectedTemplate={selectedTemplate}/>}/>
+      <Route path="/resume-3" element={<Resume3 selectedTemplate={selectedTemplate}/>}/>
+      <Route path="/resume-7" element={<Resume7 selectedTemplate={selectedTemplate}/>}/>
       <Route path="/template/add" element={<ResumeForm/>}/>
     </Routes>
     </BrowserRouter>

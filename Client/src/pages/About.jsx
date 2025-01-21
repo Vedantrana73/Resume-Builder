@@ -11,10 +11,11 @@ function About() {
         <p className="text-lg">
           This project is developed by a team of passionate individuals: 
             {
-                owners.map((owner)=>{
+                owners.map((owner, index)=>{
                     return(
-                        <div className='flex items-center gap-4 py-1'>
+                        <div key={index} className='flex items-center gap-4 py-1'>
                             <div>
+                              
                                 <img src={logo} alt="" className='w-10 h-10' />
                             </div>
                             <div>
