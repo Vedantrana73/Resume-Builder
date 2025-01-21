@@ -47,10 +47,10 @@ function Main() {
         <Route path="/about-us" element={<About />} />
         <Route path="/resume1" element={<Resume1 />} />
         <Route path="/resume2" element={<Resume2 />} />
+        <Route path="/resume3" element={<Resume3/>}/>
         <Route path="/resume4" element={<Resume4/>}/>
         <Route path="/resume6" element={<Resume6/>}/>
-        <Route path="/resume-3" element={<Resume3 selectedTemplate={selectedTemplate}/>}/>
-        <Route path="/resume-7" element={<Resume7 selectedTemplate={selectedTemplate}/>}/>
+        <Route path="/resume7" element={<Resume7/>}/>
         <Route path="/template/add" element={<ResumeForm />} />
       </Routes>
       {!noNavbarPaths.includes(location.pathname) && <LowerPadding />}
