@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
 function ResumeForm() {
-  const { userEmail } = useSelector(state => state.user);
+  
   const [resumeData, setResumeData] = useState({
     userEmail,
     templateName: '',
@@ -21,16 +19,6 @@ function ResumeForm() {
     certifications: [],
     languages: []  // New languages field
   });
-
-  useEffect(() => {
-    console.log('Redux state:', userEmail); // Log the value of userEmail from Redux state
-    if (userEmail) {
-      setResumeData((prevData) => ({
-        ...prevData,
-        userEmail: userEmail
-      }));
-    }
-  }, [userEmail]);
 
   const [newHobby, setNewHobby] = useState('');
   const [newSkill, setNewSkill] = useState('');

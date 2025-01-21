@@ -5,14 +5,14 @@ import { Link, useNavigate } from 'react-router-dom';
 function Login() {
   return (
     <div className='flex justify-center px-5'>
-      <form className='space-y-6 w-full max-w-l'>
+      <form className='space-y-6 w-full max-w-md'>
         <h1 className='text-3xl font-bold text-center pb-5'>Login</h1>
 
         <label className="input input-bordered flex items-center gap-4 w-full">
           <span className='text-xl'>
             <BiUser />
           </span>
-          <input type="email" name='email' className="grow w-full" placeholder="Registered Email" autoFocus />
+          <input type="email" name='email' className="grow w-full" placeholder="Registered Email" autoFocus/>
         </label>
 
         <label className="input input-bordered flex items-center gap-4 w-full">

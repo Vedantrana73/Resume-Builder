@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BiUser } from 'react-icons/bi';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 function Profile() {
-  const navigate = useNavigate();
-  const {email,password} = useSelector((state) => state.auth.authDetails);
   return (
     <div className='px-1 space-y-4'>
       {/* Profile Section */}
-      <div className='border border-gray-500 flex flex-col lg:flex-row lg:items-center p-4 rounded-lg px-5'>
+      <div className='border border-gray-500 flex flex-col lg:flex-row lg:items-center p-4 rounded-lg px-5 md:space-x-10'>
         <div className='my-4 text-8xl overflow-hidden bg-base-300 w-fit text-base-content rounded-full border'>
           <BiUser />
         </div>
@@ -30,7 +26,7 @@ function Profile() {
             <strong>Email:</strong> 
           </div>
           <div>
-            {email}
+            hello World
           </div>
             </div>
 

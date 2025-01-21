@@ -1,16 +1,16 @@
 import { BiEnvelope, BiKey } from 'react-icons/bi';
-import { Link, } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 function Register() {
   return (
     <div>
-      <form className='flex flex-col items-center space-y-6' onSubmit={handleSubmit}>
+      <form className='flex flex-col items-center space-y-6'>
         <h1 className='text-3xl font-bold text-center pb-5'>Register</h1>
 
         <label className="input input-bordered flex items-center gap-4 w-full md:max-w-md">
           <span className='text-xl'>
             <BiEnvelope />
           </span>
-          <input type="email" name="email" className="grow w-full" placeholder="Email" />
+          <input type="email" name="email" className="grow w-full" placeholder="Email" autoFocus />
         </label>
 
         <label className="input input-bordered flex items-center gap-4 w-full md:max-w-md">
