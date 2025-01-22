@@ -27,7 +27,7 @@ function App() {
 
 function Main() {
   const location = useLocation();
-  const noNavbarPaths = ['/resume1', '/resume2','/resume3','/resume6'];
+  const noNavbarPaths = ['/resume1', '/resume2','/resume3','/resume6','/resume7'];
 
   return (
     <>
