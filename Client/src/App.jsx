@@ -17,6 +17,7 @@ import Resume6 from "./Resume/Resume6.jsx";
 import Resume3 from "./Resume/Resume3.jsx";
 import Resume7 from "./Resume/Resume7.jsx";
 import Resume5 from "./Resume/Resume5.jsx";
+import Resume8 from "./Resume/Resume8.jsx";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
 
 function Main() {
   const location = useLocation();
-  const noNavbarPaths = ['/resume1', '/resume2','/resume3','/resume6','/resume7','/resume5'];
+  const noNavbarPaths = ['/resume1', '/resume2','/resume3','/resume6','/resume7','/resume5','/resume8'];
 
   return (
     <>
@@ -51,8 +52,9 @@ function Main() {
         <Route path="/resume3" element={<Resume3/>}/>
         <Route path="/resume4" element={<Resume4/>}/>
         <Route path="/resume5" element={<Resume5/>}/>
-gu        <Route path="/resume6" element={<Resume6/>}/>
+        <Route path="/resume6" element={<Resume6/>}/>
         <Route path="/resume7" element={<Resume7/>}/>
+        <Route path="/resume8" element={<Resume8/>}/>
         <Route path="/template/add" element={<ResumeForm />} />
       </Routes>
       {!noNavbarPaths.includes(location.pathname) && <LowerPadding />}
