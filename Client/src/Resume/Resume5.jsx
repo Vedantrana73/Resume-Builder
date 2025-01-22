@@ -1,6 +1,6 @@
-import React from 'react'
 import Navbar from '../components/Navbar';
-import Padding from '../components/Padding'
+import Padding from '../components/Padding';
+import profile from '../assets/profile.jpg'
 function Resume5() {
     const resumeData = {
         name: "Leo Das Makwana",
@@ -86,28 +86,37 @@ function Resume5() {
 
         <div className='w-screen lg:max-w-5xl h-full border px-3 mx-auto flex'>
             <div className='w-2/5 border border-black'>
-                <div className='h-1/4 w-full border border-red-500'>
-                    this 
+                <div className='h-96 w-full border border-red-500 bg-no-repeat bg-cover flex flex-col justify-end' style={{backgroundImage: `url(${profile})`}}>
+                <div className='text-3xl flex justify-center p-4 opacity-80 text-white font-bold bg-blue-500'>{resumeData.name.toUpperCase()}</div>
                 </div>
+
+                <section className='mt-2 px-3'>
+                  <div className='text-2xl font-semibold'>
+                    {resumeData.jobTitle}
+                  </div>
+                  <div className='text-lg font-semibold'>
+                    {resumeData.careerObjective}
+                  </div>
+                </section>
             </div>
-            <div className='w-3/5 border border-black px-2'>
+            <div className='w-3/5 border border-black px-4'>
                 <section className='py-1'>
-                    <h2 className='text-blue-500 font-semibold text-2xl'>Skills</h2>
+                    <h2 className='text-blue-500 font-semibold text-3xl py-1'>SKILLS</h2>
                     <ul>
                         {resumeData.technicalSkills && resumeData.technicalSkills.map((skill)=>(
-                            <li className='text-base'>{skill}</li>
+                            <li className='font-semibold text-xl' key={skill}>{skill}</li>
                         ))}
                     </ul>
                 </section>
 
                 <section className='mt-2'>   
-                    <h2 className='text-blue-500 font-semibold text-2xl'>Education</h2>
-                    <ul>
+                    <h2 className='text-blue-500 font-semibold text-3xl py-1'>EDUCATION</h2>
+                    <ul className='space-y-1'>
                         {resumeData.education && resumeData.education.map((education)=>(
-                            <li>
-                                <div className='font-semibold'>{education.degree}</div>
-                                <div className='font-semibold'>{education.startYear} - {education.endYear}</div>
-                                <div>{education.institution}</div>
+                            <li key={education.institution}>
+                                <div className='font-semibold text-xl'>{education.degree}</div>
+                                <div className='font-semibold text-lg'>{education.startYear} - {education.endYear}</div>
+                                <div className='font-semibold text-lg'>{education.institution}</div>
                             </li>
                         ))}
                     </ul>
