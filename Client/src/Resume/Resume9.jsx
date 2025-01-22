@@ -1,7 +1,6 @@
 import Navbar from "../components/Navbar";
 import Padding from "../components/Padding";
 import profile from '../assets/profile.jpg';
-import woman from '../assets/woman.webp';
 
 function Resume9() {
   const resumeData = {

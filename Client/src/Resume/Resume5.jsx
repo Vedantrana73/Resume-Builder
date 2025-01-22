@@ -1,6 +1,9 @@
 import Navbar from '../components/Navbar';
 import Padding from '../components/Padding';
 import profile from '../assets/profile.jpg'
+import { BiPhone } from 'react-icons/bi';
+import { BiMailSend } from 'react-icons/bi';
+import { BiLocationPlus } from 'react-icons/bi';
 function Resume5() {
     const resumeData = {
         name: "Leo Das Makwana",
@@ -75,7 +78,7 @@ function Resume5() {
   };
 
   return (
-    <div className='min-h-screen flex flex-col'>
+    <div className='h-screen flex flex-col'>
         <div className='no-print'>
             <Navbar />
             <Padding />
@@ -100,13 +103,15 @@ function Resume5() {
                 </section>
 
                 <section className='text-xl py-3 px-3 bg-blue-200'>
-                  <div>
-                    {resumeData.contact.phone}
+                  <div className='flex gap-1 items-center'>
+                    <BiPhone/>{resumeData.contact.phone}
                   </div>
-                  <div>
+                  <div className='flex items-center gap-1'>
+                    <BiMailSend/>
                     {resumeData.contact.email}
                   </div>
-                  <div>
+                  <div className='flex items-center gap-1'>
+                    <BiLocationPlus/>
                     {resumeData.contact.address}
                   </div>
                 </section>
@@ -125,12 +130,12 @@ function Resume5() {
                   </ul>
                 </section>
             </div>
-            <div className='w-3/5 border border-black px-4'>
+            <div className='w-3/5 px-4'>
                 <section className='py-1 border-b-2 border-blue-600 pb-3'>
                     <h2 className='text-blue-500 font-semibold text-3xl py-1'>SKILLS</h2>
-                    <ul>
+                    <ul className='h-40 flex flex-col flex-wrap'>
                         {resumeData.technicalSkills && resumeData.technicalSkills.map((skill)=>(
-                            <li className='font-semibold text-xl' key={skill}>{skill}</li>
+                            <li className='font-semibold text-lg' key={skill}>{skill}</li>
                         ))}
                     </ul>
                 </section>
@@ -140,7 +145,7 @@ function Resume5() {
                     <ul className='space-y-1 '>
                         {resumeData.education && resumeData.education.map((education)=>(
                             <li key={education.institution}>
-                                <div className='font-semibold text-xl'>{education.degree}</div>
+                                <div className='font-semibold text-xl text-blue-500'>{education.degree}</div>
                                 <div className='font-semibold text-lg'>{education.startYear} - {education.endYear}</div>
                                 <div className='font-semibold text-lg'>{education.institution}</div>
                             </li>
@@ -148,10 +153,30 @@ function Resume5() {
                     </ul>
                 </section>
 
-                <section className='mt-2'>
-                    <h2 className='text-blue-500 font-semibold text-2xl'></h2>
-                    <ul>
-                      
+                <section className='mt-2 border-b-2 pb-2 border-blue-600'>
+                    <h2 className='text-blue-500 font-semibold text-3xl'>CERTIFICATES</h2>
+                    <ul className='py-1 h-40 flex flex-col flex-wrap '>
+                      {resumeData.personalSkills && resumeData.personalSkills.map((skill)=>(
+                          <li className='font-semibold text-lg'>
+                            {skill}
+                          </li>
+                      ))}
+                    </ul>
+                </section>
+
+                <section className='mt-2 border-b-2 pb-2 border-blue-600'>
+                    <h2 className='text-blue-500 font-semibold text-3xl'>SOFT SKILLS</h2>
+                    <ul className='py-1'>
+                      {resumeData.certificates && resumeData.certificates.map((certificate)=>(
+                          <li>
+                            <div className='text-xl text-blue-500 font-semibold'>
+                              {certificate.title}
+                            </div>
+                            <div className='text-lg font-semibold'>
+                              {certificate.institution}
+                            </div>
+                          </li>
+                      ))}
                     </ul>
                 </section>
             </div>
