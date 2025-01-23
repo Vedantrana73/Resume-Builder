@@ -81,6 +81,7 @@ function Resume7() {
   return (
     <>
       {/* Print Button - Will be hidden when printing */}
+      <div className="min-h-screen">
       <div className="no-print">
         <Navbar />
         <Padding />
@@ -188,6 +189,7 @@ function Resume7() {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
