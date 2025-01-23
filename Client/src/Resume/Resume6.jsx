@@ -91,7 +91,7 @@ function Resume6() {
             <Navbar />
             <Padding />
             <div className='p-3'>
-                <button className='px-4 py-2 bg-gray-800 rounded-lg text-white' onClick={handlePrint}>Hello World</button>
+                <button className='px-4 py-2 bg-green-500 rounded-lg text-white' onClick={handlePrint}>Print</button>
             </div>
         </div>
 

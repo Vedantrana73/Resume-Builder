@@ -82,7 +82,7 @@ function Resume4() {
         <Navbar />
         <Padding />
         <div className='p-3'>
-          <button className='px-4 py-2 bg-gray-800 rounded-lg' onClick={handlePrint}>Print Resume</button>
+          <button className='px-4 py-2 bg-green-500 rounded-lg' onClick={handlePrint}>Print</button>
         </div>
       </div>
 
