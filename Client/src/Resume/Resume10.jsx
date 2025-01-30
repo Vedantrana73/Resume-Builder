@@ -1,10 +1,10 @@
 import React from "react";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaPhone} from "react-icons/fa";
 import profilePic from "../assets/profile.jpg";
 import Navbar from "../components/Navbar";
 import Padding from "../components/Padding";
 
-function Resume() {
+function Resume10() {
   const resumeData = {
     name: "Leo Das Makwana",
     jobTitle: "Senior Graphic Designer",
@@ -12,7 +12,9 @@ function Resume() {
       phone: "123-456-7890",
       email: "leo@example.com",
       address: "123 Main St, Cityville, CV 12345",
-      portfolio: "https://www.behance.net/leo-das-makwana"
+      portfolio: "https://www.behance.net/leo-das-makwana",
+      linkedin: "linkedin.com/in/leo-das-makwana",
+      twitter: "leo_das_makwana"
     },
     professionalSummary: "Dedicated senior graphic designer with 8+ years of experience in visual design, specializing in UI/UX, branding, and digital media. Proven track record in leading design teams and achieving business goals through creative solutions.",
     workExperience: [
@@ -104,121 +106,118 @@ function Resume() {
         </div>
       </div>
 
-
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex font-sans">
-      {/* Sidebar */}
-      <div className="w-1/3 bg-white shadow-lg p-6 flex flex-col items-center">
-        <img
-          src={profilePic}
-          alt="Profile"
-          className="rounded-full w-32 h-32 border-4 border-gray-300 object-cover"
+      <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex font-sans">
+        {/* Sidebar */}
+        <div className="w-1/3 bg-white shadow-lg p-6 flex flex-col items-center">
+          <img
+            src={profilePic}
+            alt="Profile"
+            className="rounded-full w-32 h-32 border-4 border-gray-300 object-cover"
           />
-        <h1 className="text-2xl font-bold mt-4 text-gray-800">{resumeData.name}</h1>
-        <h2 className="text-lg text-gray-600">{resumeData.jobTitle}</h2>
-        <div className="mt-4 space-y-2 text-gray-600">
-          <div className="flex items-center space-x-2">
-            <FaEnvelope />
-            <span>{resumeData.contact.email}</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <FaPhone />
-            <span>{resumeData.contact.phone}</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <FaMapMarkerAlt />
-            <span>{resumeData.contact.address}</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <FaLinkedin />
-            <a href={`https://${resumeData.contact.linkedin}`} className="text-blue-600" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-          </div>
-          <div className="flex items-center space-x-2">
-            <FaTwitter />
-            <a href={`https://twitter.com/${resumeData.contact.twitter}`} className="text-blue-600" target="_blank" rel="noreferrer">
-              Twitter
-            </a>
-          </div>
-        </div>
-
-        <div className="mt-8">
-          <h3 className="text-xl font-semibold text-gray-800">Skills</h3>
-          <div className="flex flex-wrap mt-4">
-            {resumeData.skills.map((skill, index) => (
-              <span
-              key={index}
-              className="bg-gray-200 text-gray-700 text-sm py-1 px-3 mr-2 mb-2 rounded-full"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="w-2/3 p-8">
-        <section>
-          <h3 className="text-2xl font-semibold text-gray-800">Summary</h3>
-          <p className="text-gray-700 mt-4">{resumeData.summary}</p>
-        </section>
-
-        <section className="mt-8">
-          <h3 className="text-2xl font-semibold text-gray-800">Work Experience</h3>
-          {resumeData.workExperience.map((job, index) => (
-            <div
-            key={index}
-            className="mt-6 bg-white shadow-lg p-4 rounded-lg"
-            >
-              <h4 className="text-xl font-bold text-gray-800">{job.title}</h4>
-              <p className="text-gray-600 italic">
-                {job.company} - {job.location}
-              </p>
-              <p className="text-sm text-gray-600">{job.period}</p>
-              <ul className="mt-4 list-disc pl-6 text-gray-600">
-                {job.responsibilities.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ul>
+          <h1 className="text-2xl font-bold mt-4 text-gray-800">{resumeData.name}</h1>
+          <h2 className="text-lg text-gray-600">{resumeData.jobTitle}</h2>
+          <div className="mt-4 space-y-2 text-gray-600">
+            <div className="flex items-center space-x-2">
+              <FaEnvelope />
+              <span>{resumeData.contact.email}</span>
             </div>
-          ))}
-        </section>
-
-        <section className="mt-8">
-          <h3 className="text-2xl font-semibold text-gray-800">Certifications</h3>
-          <ul className="mt-4 list-disc pl-6 text-gray-700">
-            {resumeData.certifications.map((cert, index) => (
-              <li key={index}>{cert}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="mt-8">
-          <h3 className="text-2xl font-semibold text-gray-800">Education</h3>
-          {resumeData.education.map((edu, index) => (
-            <div key={index} className="mt-4 bg-white shadow-lg p-4 rounded-lg">
-              <h4 className="text-lg font-bold text-gray-800">{edu.degree}</h4>
-              <p className="text-gray-600">{edu.institution}</p>
-              <p className="text-sm text-gray-600">{edu.years}</p>
+            <div className="flex items-center space-x-2">
+              <FaPhone />
+              <span>{resumeData.contact.phone}</span>
             </div>
-          ))}
-        </section>
+          </div>
 
-        <section className="mt-8">
+          <div className="mt-8">
+            <h3 className="text-xl font-semibold text-gray-800">Skills</h3>
+            <div className="flex flex-wrap mt-4">
+              {resumeData.skills.technical.map((skill, index) => (
+                <span
+                  key={index}
+                  className="bg-gray-200 text-gray-700 text-sm py-1 px-3 mr-2 mb-2 rounded-full"
+                >
+                  {skill}
+                </span>
+              ))}
+              {resumeData.skills.softSkills.map((skill, index) => (
+                <span
+                  key={index}
+                  className="bg-gray-200 text-gray-700 text-sm py-1 px-3 mr-2 mb-2 rounded-full"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="w-full">
+
           <h3 className="text-2xl font-semibold text-gray-800">Languages</h3>
-          <ul className="mt-4 text-gray-700">
-            {resumeData.languages.map((lang, index) => (
-              <li key={index}>
-                {lang.name}: {lang.proficiency}
-              </li>
+            <ul className="mt-4 text-gray-700">
+              {resumeData.languages.map((lang, index) => (
+                <li key={index}>
+                  <div className="text-xl font-semibold">
+                  {lang.name}:
+                  </div>
+                  <div>
+                  <progress className="progress progress-primary w-56" value={lang.familiarity} max="100"></progress>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="w-2/3 p-4">
+          <section>
+            <h3 className="text-2xl font-semibold text-gray-800">Summary</h3>
+            <p className="text-gray-700 mt-4">{resumeData.professionalSummary}</p>
+          </section>
+
+          <section className="mt-4">
+            <h3 className="text-2xl font-semibold text-gray-800">Work Experience</h3>
+            {resumeData.workExperience.map((job, index) => (
+              <div
+                key={index}
+                className="mt-4 bg-white shadow-lg p-4 rounded-lg"
+              >
+                <h4 className="text-xl font-bold text-gray-800">{job.title}</h4>
+                <p className="text-gray-600 italic">
+                  {job.company} - {job.startDate} to {job.endDate}
+                </p>
+                <ul className="mt-4 list-disc pl-6 text-gray-600">
+                  {job.responsibilities.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
-        </section>
+          </section>
+
+          <section className="mt-4">
+            <h3 className="text-2xl font-semibold text-gray-800">Certifications</h3>
+            <ul className="mt-4 list-disc pl-6 text-gray-700">
+              {resumeData.certifications.map((cert, index) => (
+                <li key={index}>{cert.title} - {cert.institution} ({cert.year})</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="mt-4">
+            <h3 className="text-2xl font-semibold text-gray-800">Education</h3>
+            {resumeData.education.map((edu, index) => (
+              <div key={index} className="mt-4 bg-white shadow-lg p-4 rounded-lg">
+                <h4 className="text-lg font-bold text-gray-800">{edu.degree}</h4>
+                <p className="text-gray-600">{edu.institution}</p>
+                <p className="text-sm text-gray-600">{edu.startYear} - {edu.endYear}</p>
+              </div>
+            ))}
+          </section>
+
+          
+        </div>
       </div>
-    </div>
-            </>
+    </>
   );
 }
 
-export default Resume;
+export default Resume10;
